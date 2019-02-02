@@ -50,8 +50,6 @@ public class IUserDaoTest {
     public void testDeleteUser() throws Exception {
         int id = 3;
         dao.deleteUser(id);
-
-
     }
 
 
