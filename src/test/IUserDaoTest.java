@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.concurrent.Callable;
-
 /**
  * 请填写类注释
  *
@@ -31,14 +29,14 @@ public class IUserDaoTest {
     }
 
     @Test
-    public void testInsertUser() throws  Exception{
+    public void testInsertUser() throws Exception {
         User user = new User();
         user.setName("wzh4");
         dao.insertUser(user);
     }
 
     @Test
-    public void testUpdateUser() throws  Exception{
+    public void testUpdateUser() throws Exception {
         User user = new User();
         user.setId(2);
         user.setName("wzh");
@@ -51,8 +49,6 @@ public class IUserDaoTest {
         int id = 3;
         dao.deleteUser(id);
     }
-
-
 
 
 }

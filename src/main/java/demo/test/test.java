@@ -1,10 +1,6 @@
 package demo.test;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 /**
@@ -15,10 +11,8 @@ import java.util.Map;
  */
 public class test {
 
-    private static String groupName;
 
-
-    private static Map<String, HashMap<Integer, String>> map = new HashMap<String, HashMap<Integer, String>>();
+    private static Map<String, HashMap<Integer, String>> map = new HashMap<>();
 
 
     private static HashMap<Integer, String> groupTypeHM = new HashMap<Integer, String>() {{
@@ -57,7 +51,7 @@ public class test {
 
 //        System.out.println(map);
 
-        groupName = groupTypeHM.get(0) + "-" + regionTypeHM.get(1) + "-" + termTypeHM.get(1) + "-" + financeTypeHM.get(2);
+        String groupName = groupTypeHM.get(0) + "-" + regionTypeHM.get(1) + "-" + termTypeHM.get(1) + "-" + financeTypeHM.get(2);
 
         String str = map.get("1001").get(0) + "-" + map.get("1002").get(1) + "-" + map.get("1003").get(1) + "-" + map.get("1004").get(2);
 
