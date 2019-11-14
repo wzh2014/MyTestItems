@@ -21,7 +21,7 @@
 <body>
 <p id="test">Hello World!</p>
 <button type="button" onclick="selectUser()">onclick test</button>
-<form action="/user/selectUser.do" method="post">
+<form action="/user/selectUser.do" method="get">
     <table>
         <tr>
             <th>id</th>

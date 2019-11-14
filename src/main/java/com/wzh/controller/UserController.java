@@ -1,10 +1,12 @@
 package com.wzh.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.wzh.model.User;
 import com.wzh.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -36,12 +38,11 @@ public class UserController {
         response.getWriter().close();
     }
 
-    @RequestMapping("/selectUser.do")
-    private String select(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @RequestMapping(value = "/selectUser.do" ,method = RequestMethod.GET)
+    private Object select(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String id = request.getParameter("id");
         User user = userService.selectUser(Integer.parseInt(id));
-        request.setAttribute("user", user);
-        return "index";
+        return user;
 
     }
 

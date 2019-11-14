@@ -5,18 +5,18 @@
 <mapper namespace="com.wzh.dao.IUserDao">
 
     <select id="selectUser" resultType="User" parameterType="Integer">
-        SELECT * FROM test WHERE id = #{id}
+        SELECT * FROM t_user WHERE id = #{id}
     </select>
 
     <insert id="insertUser" parameterType="User">
-        insert into test values (#{id},#{name})
+        insert into t_user values (#{id},#{name})
     </insert>
 
     <update id="updateUser" parameterType="User">
-        update test set name = #{name} where id = #{id}
+        update t_user set name = #{name} where id = #{id}
     </update>
 
     <delete id="deleteUser" parameterType="Integer">
-        delete from test WHERE id =#{id}
+        delete from t_user WHERE id =#{id}
     </delete>
 </mapper>

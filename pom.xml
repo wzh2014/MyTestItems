@@ -21,6 +21,8 @@
     <spring.version>4.3.5.RELEASE</spring.version>
     <!-- mybatis版本号 -->
     <mybatis.version>3.4.1</mybatis.version>
+    <mysql.version>8.0.11</mysql.version>
+    <druid.version>1.1.0</druid.version>
   </properties>
 
   <dependencies>
@@ -60,19 +62,18 @@
     </dependency>
 
 
-    <!-- 数据库 -->
+    <!-- MySql -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.41</version>
-      <scope>runtime</scope>
+      <version>${mysql.version}</version>
     </dependency>
 
-    <!-- 数据库连接池 -->
+    <!-- 连接池 阿里巴巴数据源 全世界最牛逼的data source 没有之一 -->
     <dependency>
-      <groupId>com.mchange</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.5.2</version>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.version}</version>
     </dependency>
 
     <!-- MyBatis -->
@@ -169,5 +170,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
